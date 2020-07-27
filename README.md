@@ -179,28 +179,29 @@
 
 1. docs 结构
 
-   ```javascript
-   docs
-   	- .vuepress 
-   	- post // markdown 文章
-   		- post1.md
-   		- post2.md
-   		- ...
-       - about.md // 关于页面
-       - links.md // 友链页面
+   ```
+   |- docs
+   	|- .vuepress 
+   		|- config.js // 配置文件
+   	|- post // markdown 文章
+   		|- post1.md
+   		|- post2.md
+   		|- ...
+   	|- about.md // 关于页面
+   	|- links.md // 友链页面
    ```
 
 2. 静态资源
 
    图片等静态资源放在 .vuepress/public 下，vuepress build 时自动拷贝到 index.html 所在目录
 
-   ```javascript
-   docs
-   	- .vuepress
-           - public
-           - cover // 封面
-           - meta // favicon.ico, logo.png...
-           - image // 其他图片
+   ```
+   |- docs
+   	|- .vuepress
+   		|- public
+   			|- cover // 封面
+   			|- meta // favicon.ico, logo.png...
+   			|- image // 其他图片
    ```
 ## 最后
 
