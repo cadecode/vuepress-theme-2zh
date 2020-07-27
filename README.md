@@ -169,15 +169,39 @@
 
    文章列表中显示的封面
 
-   不指定该项会默认使用 cover 目录下的图片，以文章在列表排序中的索引为名称，png 为后缀，如 0.jpg 为列表中的最后一篇文章的封面
-
-   图片等静态资源放在 .vuepress/public 下，vuepress build 时自动拷贝到 index.html 所在目录
+   不指定该项会默认使用 cover 文件夹下的图片，以文章在列表排序中的索引为名称，png 为后缀，如 0.jpg 为列表中的最后一篇文章的封面
 
    ```javascript
    // 示例
    cover: /cover/picture.png
    ```
+### 目录配置
 
+1. docs 结构
+
+   ```javascript
+   docs
+   	- .vuepress 
+   	- post // markdown 文章
+   		- post1.md
+   		- post2.md
+   		- ...
+       - about.md // 关于页面
+       - links.md // 友链页面
+   ```
+
+2. 静态资源
+
+   图片等静态资源放在 .vuepress/public 下，vuepress build 时自动拷贝到 index.html 所在目录
+
+   ```javascript
+   docs
+   	- .vuepress
+           - public
+           - cover // 封面
+           - meta // favicon.ico, logo.png...
+           - image // 其他图片
+   ```
 ## 最后
 
 不足之处，敬请见谅，编码不易，感谢支持！
