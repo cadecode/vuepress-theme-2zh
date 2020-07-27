@@ -175,6 +175,17 @@
    // 示例
    cover: /cover/picture.png
    ```
+>需要注意的是，docs 文件夹下 about.md 和 links.md 分别对应导航栏中的关于和友链
+>
+>需要在 md 文件头部标注要使用的布局，如下
+>
+>```yaml
+>layout: Info 
+>permalink: /:slug
+>title: About
+>description: '...'
+>```
+
 ### 目录配置
 
 1. docs 结构
