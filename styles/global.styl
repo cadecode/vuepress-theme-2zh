@@ -1,0 +1,55 @@
+@require './palette.styl'
+
+::-webkit-scrollbar
+  width 6px
+  height 6px
+
+
+::-webkit-scrollbar-thumb
+  min-height 28px
+  background-color $scrollBar !important
+  background-clip padding-box
+  border-radius 0 !important
+
+
+::-webkit-scrollbar-track-piece
+  background-color #fff
+
+
+*
+:after
+:before
+  box-sizing border-box
+
+html
+body
+  margin 0
+  background-color #ffffff
+  color $plainText
+  font-size 14px
+  font-family "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+  line-height 1.8
+  //scroll-behavior smooth
+
+
+a
+  color $main
+  text-decoration none
+  cursor pointer
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.clearfix
+  &:after
+    content ''
+    display block
+    clear both
+
+.component-content
+  margin 64px auto 0
+  min-height calc(100vh - 125px)
+  transition .5s ease-in-out
+
+.component-hide
+  margin-top 150px
+  opacity 0

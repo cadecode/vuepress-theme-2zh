@@ -1,0 +1,56 @@
+@require './palette.styl'
+@require './prism.css'
+
+.markdown-content
+  h1
+    display none
+
+  h2
+    color $mainText
+    font-size 1.3em
+    font-weight 500
+
+  h3
+    color $mainText
+    font-size 1.2em
+    font-weight 500
+
+  h4
+    font-size 1.1em
+    font-weight 500
+
+  blockquote
+    margin 0
+    padding 3px 10px 3px 20px
+    border-left 4px solid $blockquoteBorder
+
+  pre[class*="language-"]
+    background-color $codeBlockBg
+    border-radius 5px
+
+  code
+    font-family: Consolas
+
+  ol
+  ul
+    padding-left 20px
+
+  table
+    display block
+    overflow-x auto
+    margin 1rem 0
+    border-collapse collapse
+
+    tr
+      border-top 1px solid #dfe2e5
+
+      &:nth-child(2n)
+        background-color #f6f8fa
+
+    td
+    th
+      border 1px solid #dfe2e5
+      padding .6em 1em
+
+
+

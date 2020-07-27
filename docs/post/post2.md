@@ -1,0 +1,10 @@
+---
+
+title: Post2
+tag: JavaScript
+date: 2020/7/2
+
+---
+
+## this is post 2
+
