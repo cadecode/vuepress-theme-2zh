@@ -1,0 +1,430 @@
+@require './palette.styl'
+
+//Head.ve
+.head-container
+  position fixed
+  top 0
+  z-index 1024
+  width 100%
+  height 64px
+  background-color #ffffff
+  box-shadow $midBoxShadow
+  font-size 15px
+  line-height 64px
+  transition top .5s ease-in-out
+
+  &.head-hide
+    top -64px
+
+.head-content
+  margin 0 auto
+  max-width 1000px
+
+.head-logo
+  float left
+  height 64px
+
+.head-logo
+  span
+    margin-left 40px
+    color #000
+    font-size 20px
+    text-decoration none
+    letter-spacing 2px
+
+  img
+    height 25px
+    margin-top 20px
+    margin-left 20px
+
+.head-links
+  float right
+  height 64px
+
+.head-menu
+  border none !important
+
+  li
+    border none !important
+    line-height 64px !important
+
+  .head-menu-sub
+    > div
+      border none !important
+      line-height 64px !important
+
+//Foot.vue
+.foot-container
+  text-align center
+
+  a
+    color inherit
+
+    &:hover
+      color #409EFF
+
+.foot-links
+  padding 10px
+  border-bottom 1px solid $footBorder
+  line-height 30px
+
+  a
+    display inline-block
+    margin 0 20px
+
+.foot-meta
+  padding 20px
+  line-height 20px
+
+// Index.vue
+.index-container
+  padding 20px
+  max-width 1000px
+
+
+.index-card-wrapper
+  margin 0 auto
+  padding 20px
+  max-width 300px
+
+
+.index-card
+  position relative
+  transition .3ms ease
+
+  &:hover
+    box-shadow $minBoxShadow !important
+
+    .index-card-cover
+      transform scale(1.1)
+      filter blur(1px)
+
+    .index-card-desc
+      padding-top 20px
+      opacity 1
+
+  a
+    color $mainText
+
+.index-card-cover
+  min-height 160px
+  background-color $cardCoverBg
+  background-position center center
+  background-size cover
+  transition .3s ease
+
+.index-card-desc
+  position absolute
+  top 0
+  opacity 0
+  padding 100px 20px 0
+  width 100%
+  height 100%
+  background-color $cardDescBg
+  color white
+  font-size 13px
+  transition .3s ease
+
+.index-card-pined
+  position absolute
+  top 10px
+  right 0
+  padding 5px 10px
+  background $success
+  border-radius 10px 0 0 10px
+  box-shadow $minBoxShadow
+  color #ffffff
+  line-height 1
+
+.index-card-title
+  position relative
+  min-height 70px
+  padding 10px 20px 0
+  background-color #ffffff
+  font-size 16px
+
+.index-card-meta
+  position relative
+  padding 0 20px
+  min-height 30px
+  background-color #ffffff
+  color $info
+  font-size 13px
+  line-height 30px
+
+.index-card-date
+  float left
+  padding-right 10px
+  width 50%
+  text-align right
+
+.index-card-tag
+  float left
+  overflow-x hidden
+  padding-left 10px
+  width 50%
+  text-overflow ellipsis
+  white-space nowrap
+
+.index-pagination
+  margin 20px 0 10px
+  background-color transparent
+  text-align center
+
+// Search.vue
+.search-container
+  padding 60px 20px 20px
+  max-width 1000px
+
+.search-box
+  width 100% !important
+
+
+.search-box
+  > ul
+    width 100% !important
+    border none !important
+    box-shadow $minBoxShadow
+
+  > input
+    left auto
+    width 100% !important
+    border none !important
+    box-shadow $minBoxShadow
+
+    &:focus
+    &:hover
+      box-shadow $maxBoxShadow
+
+.search-tag-wrapper
+  padding 20px 40px
+  text-align center
+
+  a
+    display inline-block
+    margin 10px 8px 0 0
+    padding 5px 15px
+    border-radius 15px
+    box-shadow $minBoxShadow
+    color $mainText
+    font-size 13px
+    transition .3s ease
+
+    &:hover
+      box-shadow $maxBoxShadow
+      color $main
+
+// Tag.vue
+.tag-container
+  padding-top 60px
+  padding-bottom 20px
+
+.tag-name
+  font-size 18px
+  text-align center
+
+// Layout.vue
+.default-container
+  padding 60px 0 20px
+  text-align center
+
+// Info.vue
+.info-container
+  padding 60px 20px 20px
+  max-width 700px
+
+.info-title
+  padding 10px 0
+  color $mainText
+  font-size 21px
+  font-weight 500
+
+// Post.vue
+.post-container
+  padding 60px 20px 20px
+  max-width 700px
+
+.post-title
+  padding 10px 0
+  color $mainText
+  font-size 21px
+  font-weight 500
+
+.post-tag
+  margin 10px 0
+
+  a
+    display inline-block
+    margin 4px 8px 0 0
+    padding 0 15px
+    color #fff
+    border-radius 15px
+    transition 0.3s ease
+
+    &:nth-child(1n)
+      background #6fa3ef
+
+    &:nth-child(2n)
+      background #ff9800
+
+
+    &:nth-child(3n)
+      background #46c47c
+
+    &:nth-child(4n)
+      background #f9bb3c
+
+    &:nth-child(5n)
+      background #bc99c4
+
+    &:nth-child(6n)
+      background #e8583d
+
+    &:hover
+      background $codeBlockBg
+      color $plainText
+
+.post-desc
+  margin 20px 0
+  padding 3px 10px 3px 20px
+  border-left 4px solid $blockquoteBorder
+
+// Notice.vue
+.notice-container
+  padding 0 30px
+  height 30px
+
+
+.notice-content
+  padding 5px
+  height 30px
+  border-radius 5px
+  background-color #ffffff
+  box-shadow $maxBoxShadow
+
+  i
+    float left
+    margin-right 10px
+    line-height 20px
+
+  ul
+    overflow hidden
+    margin 0
+    padding 0
+    height 20px
+    font-size 14px
+    line-height 20px
+    list-style none
+
+    li
+      overflow-x hidden
+      text-overflow ellipsis
+      white-space nowrap
+      transition .5s ease
+
+    a
+      color $plainText
+
+// Catalog.vue
+.catalog-container
+  .catalog-content
+    position fixed
+    top 100px
+    right calc((100vw - 700px) / 2 - 250px)
+    bottom 100px
+    overflow auto
+    padding 2px
+    width 200px
+    @media screen and (max-width 1220px)
+      top auto
+      bottom 20px
+      right 100px
+      opacity 1
+      padding 20px
+      background-color #ffffff
+      border-radius 15px
+      box-shadow $maxBoxShadow
+      transition .3s ease-in-out
+      &.catalog-hide
+        right -200px
+        opacity 0
+
+    ul
+      margin 0
+      padding 0 0 0 10px
+      border-left 3px solid $blockquoteBorder
+      list-style none
+
+    li
+      position relative
+      color $info
+      cursor pointer
+
+      &.catalog-item-2
+        font-size 13px
+
+      &.catalog-item-3
+        font-size 12px
+        text-indent .5em
+
+      &.catalog-item-active
+        color $plainText
+
+        &:before
+          content ''
+          position absolute
+          top 7px
+          left -15px
+          width 7px
+          height 7px
+          background-color $main
+          border-radius 50%
+
+  .catalog-open
+    position fixed
+    display flex
+    bottom 90px
+    right: 40px
+    z-index 100
+    width 40px
+    height 40px
+    background-color #FFF
+    border-radius 50%
+    box-shadow $maxBoxShadow
+    align-items center
+    justify-content center
+    font-size 20px
+    cursor pointer
+    transition .5s ease
+    @media screen and (min-width 1221px)
+      display none
+
+    &:hover
+      color $main
+
+// BackTop.vue
+.backtop-container
+  position fixed
+  display flex
+  bottom 40px
+  right: 40px
+  z-index 100
+  width 40px
+  height 40px
+  background-color #FFF
+  border-radius 50%
+  box-shadow $maxBoxShadow
+  align-items center
+  justify-content center
+  font-size 20px
+  cursor pointer
+  transition .5s ease
+
+  &:hover
+    color $main
+    @media screen and (min-width 1221px)
+      box-shadow $minBoxShadow
+
+
+
+
