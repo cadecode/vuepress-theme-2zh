@@ -2,7 +2,7 @@
 
 ## 介绍
 
-> vuepress 是由 vue 驱动的静态网站生成器，而 vuepress-theme-2zh 是一款基于 vuepress 的静态主题
+> vuepress 是由 vue 驱动的静态网站生成器，而 vuepress-theme-2zh 是一款基于 vuepress 的静态博客主题
 
 1. 优雅的响应式设计
 2. 简洁的文章列表
@@ -175,6 +175,17 @@
    // 示例
    cover: /cover/picture.png
    ```
+   
+7. pined
+   
+   置顶文章，设定一个数值，从 1 开始，由小到大的排列置顶文章
+   
+   ```javascript
+   // 示例
+   pined: 1
+   ```
+   
+   
 >需要注意的是，docs 文件夹下 about.md 和 links.md 分别对应导航栏中的关于和友链
 >
 >需要在 md 文件头部标注要使用的布局，如下
