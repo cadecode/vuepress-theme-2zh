@@ -1,11 +1,5 @@
 <template>
     <div class="tag-container">
-        <el-row>
-            <el-col :xs="{span: 20, offset: 2}"
-                    :sm="{span: 18, offset: 3}"
-                    :md="{span: 16, offset: 4}"
-                    :lg="{span: 14, offset: 5}"
-                    :xl="{span: 12, offset: 6}">
                 <p class="tag-name">
                     <i class="el-icon-collection" />
                     {{tagName}}
@@ -38,8 +32,6 @@
                         </div>
                     </el-col>
                 </el-row>
-            </el-col>
-        </el-row>
     </div>
 </template>
 
