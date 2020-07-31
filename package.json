@@ -1,6 +1,6 @@
 {
   "name": "@cadecode/vuepress-theme-2zh",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "由 vuepress 驱动的静态博客主题",
   "main": "index.js",
   "scripts": {
