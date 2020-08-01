@@ -81,39 +81,43 @@
   padding 20px
   max-width 1000px
 
+.index-pagination
+  margin 20px 0 10px
+  background-color transparent
+  text-align center
 
-.index-card-wrapper
+// Cards.vue
+.cards-item-wrapper
   margin 0 auto
   padding 20px
   max-width 300px
 
-
-.index-card
+.cards-item
   position relative
   transition .3ms ease
 
   &:hover
     box-shadow $minBoxShadow !important
 
-    .index-card-cover
+    .cards-item-cover
       transform scale(1.1)
       filter blur(1px)
 
-    .index-card-desc
+    .cards-item-desc
       padding-top 20px
       opacity 1
 
   a
     color $mainText
 
-.index-card-cover
+.cards-item-cover
   min-height 160px
   background-color $cardCoverBg
   background-position center center
   background-size cover
   transition .3s ease
 
-.index-card-desc
+.cards-item-desc
   position absolute
   top 0
   opacity 0
@@ -125,7 +129,7 @@
   font-size 13px
   transition .3s ease
 
-.index-card-pined
+.cards-item-pined
   position absolute
   top 10px
   right 0
@@ -136,14 +140,14 @@
   color #ffffff
   line-height 1
 
-.index-card-title
+.cards-item-title
   position relative
   min-height 70px
   padding 10px 20px 0
   background-color #ffffff
   font-size 16px
 
-.index-card-meta
+.cards-item-meta
   position relative
   padding 0 20px
   min-height 30px
@@ -152,24 +156,19 @@
   font-size 13px
   line-height 30px
 
-.index-card-date
+.cards-item-date
   float left
   padding-right 10px
   width 50%
   text-align right
 
-.index-card-tag
+.cards-item-tag
   float left
   overflow-x hidden
   padding-left 10px
   width 50%
   text-overflow ellipsis
   white-space nowrap
-
-.index-pagination
-  margin 20px 0 10px
-  background-color transparent
-  text-align center
 
 // Search.vue
 .search-container
