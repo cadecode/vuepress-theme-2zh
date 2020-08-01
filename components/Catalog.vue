@@ -66,10 +66,10 @@
                                 this.$tool.removeClass(list[i], 'catalog-item-active')
                             }
                             if (scrollTop >= arr[len - 1]) {
-                                this.$tool.addClass(list[len - 1], 'catalog-active')
+                                this.$tool.addClass(list[len - 1], 'catalog-item-active')
                                 list[i].scrollIntoView()
                             } else {
-                                this.$tool.removeClass(list[len - 1], 'catalog-active')
+                                this.$tool.removeClass(list[len - 1], 'catalog-item-active')
                             }
                         }
                     })
