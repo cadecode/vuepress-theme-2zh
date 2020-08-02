@@ -12,6 +12,7 @@ module.exports = {
     ],
     theme: require.resolve('../../'),
     themeConfig: {
+        domain: 'http://localhost/ ',
         notice: [
             {
                 text: 'vuepress 博客主题 2zh 开源地址',

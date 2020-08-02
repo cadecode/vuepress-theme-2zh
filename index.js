@@ -5,7 +5,8 @@ module.exports = (themeConfig) => {
         notice: [],
         pagination: 12,
         author: '2zh',
-        links: []
+        links: [],
+        domain: ''
     }
     for (let key in defaultConfig) {
         themeConfig[key] = themeConfig[key] || defaultConfig[key]
@@ -71,7 +72,13 @@ module.exports = (themeConfig) => {
                                 sorter
                             }
                         }
-                    ]
+                    ],
+                    sitemap: themeConfig.domain && {
+                        hostname: themeConfig.domain
+                    },
+                    feed: themeConfig.domain && {
+                        canonical_base: themeConfig.domain,
+                    }
                 }
             ],
             [
