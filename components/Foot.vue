@@ -1,6 +1,7 @@
 <template>
     <div class="foot-container">
         <div class="foot-links">
+            <a v-if="domain" :href="`${domain}/rss.xml`" target="_blank">Rss</a>
             <a v-for="(item, index) in links"
                :key="index"
                :href="item.url"
@@ -16,6 +17,9 @@
                 powered by
                 <a href="https://www.vuepress.cn/" target="_blank">vuepress</a>
             </p>
+            <p>
+                <a v-if="domain" :href="`${domain}/sitemap.xml`" target="_blank">Sitemap</a>
+            </p>
         </div>
     </div>
 </template>
@@ -26,12 +30,14 @@
         data() {
             return {
                 author: '',
-                links: []
+                links: [],
+                domain: ''
             }
         },
         created() {
             this.author = this.$themeConfig.author
             this.links = this.$themeConfig.links
+            this.domain = this.$themeConfig.domain.trim().replace(/\/$/, '')
         }
     }
 </script>

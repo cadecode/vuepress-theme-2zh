@@ -104,6 +104,18 @@
    pagination: 12
    ```
 
+6. domain
+
+   配置域名将启用 rss.xml、sitemap.xml，有利于收索引擎抓取
+
+   ```javascript
+   // 类型 String
+   // 默认
+   domain: ''
+   // 示例
+   domain: 'https://cadecode.github.io'
+   ```
+
 ### md 配置
 
 > 在每个 markdown 文件的头部进行配置，使用 YAML 语法
