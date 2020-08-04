@@ -1,6 +1,6 @@
 <template>
     <div class="catalog-container" v-show="show">
-        <div class="catalog-content catalog-hide" v-if="headers.length!==0">
+        <div class="catalog-content catalog-hide J_catalog-content" v-if="headers.length!==0">
             <ul>
                 <li v-for="(item, index) in headers" :key="index"
                     @click="clickHeaders(index)"
@@ -30,7 +30,7 @@
                 this.$tool.scrollTo(this.heights[index])
             },
             openAnchor() {
-                const catalog = document.getElementsByClassName('catalog-content')[0]
+                const catalog = document.getElementsByClassName('J_catalog-content')[0]
                 this.$tool.triggerClass(catalog, 'catalog-hide')
             }
         },
@@ -49,11 +49,11 @@
                 setTimeout(() => {
                     // catalog follow scroll
                     const getPositionInPage = this.$tool.getPositionInPage
-                    const hElements = document.querySelectorAll('.markdown-content h2,.markdown-content h3')
+                    const hElements = document.querySelectorAll('.J_markdown-content h2,.J_markdown-content h3')
                     ;[].forEach.call(hElements, (item) => {
                         this.heights.push(getPositionInPage(item).top - 70)
                     })
-                    const list = document.querySelectorAll('.catalog-content li')
+                    const list = document.querySelectorAll('.J_catalog-content li')
                     const arr = this.heights
                     const len = arr.length
                     window.addEventListener('scroll', () => {

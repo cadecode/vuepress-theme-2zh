@@ -2,7 +2,7 @@
     <div class="notice-container" v-if="notice.length!=0">
         <div class="notice-content">
             <i class="el-icon-microphone"></i>
-            <ul class="notice-list">
+            <ul class="notice-list J_notice-list">
                 <li v-for="(item, index) in notice" :key="index">
                     <a :href="item.url" target="_blank">{{item.text}}</a>
                 </li>
@@ -25,7 +25,7 @@
         },
         beforeMount() {
             this.$nextTick(() => {
-                let oUl = document.getElementsByClassName('notice-list')[0]
+                let oUl = document.getElementsByClassName('J_notice-list')[0]
                 let oLi = oUl.getElementsByTagName('li')
                 let len = oLi.length
                 this.interval = setInterval(function () {
