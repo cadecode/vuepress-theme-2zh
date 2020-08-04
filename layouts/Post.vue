@@ -8,7 +8,7 @@
             </router-link>
         </div>
         <div class="post-desc">{{desc}}</div>
-        <Content class="markdown-content" />
+        <Content class="markdown-content J_markdown-content" />
         <Catalog />
     </div>
 </template>
