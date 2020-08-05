@@ -30,9 +30,7 @@ function mermaidStarter(vm) {
 function katexStarter(vm) {
     if (latexRender) {
         vm.$nextTick(() => {
-            vm.$nextTick(() => {
-                latexRender(document.getElementsByClassName('markdown-content')[0], latexConfig)
-            })
+            latexRender(document.getElementsByClassName('markdown-content')[0], latexConfig)
         })
     } else {
         import('katex/dist/contrib/auto-render.min').then((module) => {
