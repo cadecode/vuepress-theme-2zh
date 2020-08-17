@@ -32,6 +32,7 @@ module.exports = {
             {text: 'Email', url: 'https://mail.foxmail.com'},
             {text: 'Weibo', url: 'https://weibo.com/'},
             {text: 'Facebook', url: 'https://www.facebook.com'},
-        ]
+        ],
+        valine: ['Your own appId', 'Your own appKey']
     }
 }

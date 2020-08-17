@@ -6,7 +6,8 @@ module.exports = (themeConfig) => {
         pagination: 12,
         author: '2zh',
         links: [],
-        domain: ''
+        domain: '',
+        valine: []
     }
     for (let key in defaultConfig) {
         themeConfig[key] = themeConfig[key] || defaultConfig[key]
@@ -94,6 +95,17 @@ module.exports = (themeConfig) => {
                     delay: 1000,
                     options: {
                         background: 'rgba(0, 0, 0, .5)'
+                    }
+                }
+            ],
+            themeConfig.valine.length > 1 && [
+                'vuepress-plugin-comment',
+                {
+                    choosen: 'valine',
+                    options: {
+                        el: '#valine-vuepress-comment',
+                        appId: themeConfig.valine[0],
+                        appKey: themeConfig.valine[1]
                     }
                 }
             ]
