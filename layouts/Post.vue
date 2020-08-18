@@ -10,6 +10,7 @@
         <div class="post-desc">{{desc}}</div>
         <Content class="markdown-content J_markdown-content" />
         <Catalog />
+        <Comment />
     </div>
 </template>
 
@@ -18,12 +19,14 @@
     import PostMix from '../components/PostMixin'
 
     import Catalog from '../components/Catalog'
+    import Comment from '../components/Comment'
 
     export default {
         name: "Post",
         mixins: [AllMix, PostMix],
         components: {
-            Catalog
+            Catalog,
+            Comment
         },
         data() {
             return {

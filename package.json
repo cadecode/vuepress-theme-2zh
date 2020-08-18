@@ -36,7 +36,7 @@
     "katex": "^0.12.0",
     "mermaid": "^8.6.2",
     "nprogress": "^0.2.0",
-    "vuepress-plugin-comment": "^0.7.3"
+    "valine": "^1.4.14"
   },
   "devDependencies": {
     "babel-plugin-component": "^1.1.1",
