@@ -33,6 +33,6 @@ module.exports = {
             {text: 'Weibo', url: 'https://weibo.com/'},
             {text: 'Facebook', url: 'https://www.facebook.com'},
         ],
-        valine: ['Your own appId', 'Your own appKey']
+        comment: ['Your own appId', 'Your own appKey']
     }
 }
