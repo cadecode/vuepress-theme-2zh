@@ -1,5 +1,5 @@
 <template>
-    <div class="J_comment-container"></div>
+    <div class="comment-container J_comment-container"></div>
 </template>
 
 <script>
@@ -22,9 +22,14 @@
                 new comment({
                     el: '.J_comment-container',
                     appId: this.appId,
-                    addKey: this.appKey
+                    appKey: this.appKey,
+                    enableQQ: true,
+                    placeholder: '昵称框填写 QQ，可获取头像、邮箱，快速评论~',
+                    pageSize: 1,
+                    path: window.location.pathname
                 })
             }
         }
     }
 </script>
+
