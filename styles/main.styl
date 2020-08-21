@@ -435,8 +435,21 @@
   span.vnick
     color $mainText !important
 
-  .vat, a.vnick
+  a.vnick
     color $main !important
+
+  .vat
+    padding 3px 10px
+    border 1px solid #ededed
+    border-radius 15px
+    color $mainText !important
+    transition-duration 0.4s
+
+    &:hover
+      padding 3px 10px
+      border 1px solid $main
+      border-radius 15px
+      color $main !important
 
   .vicon.actived
     fill $main !important
