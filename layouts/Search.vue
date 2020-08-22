@@ -12,7 +12,7 @@
         <div class="search-tag-wrapper">
             <p>
                 <i class="el-icon-collection-tag" />
-                The following tags help to search
+                The following tags help to search ~
             </p>
             <router-link v-for="(item, index) in tags" :index="index" :to="item.path">
                 <i class="el-icon-paperclip" />

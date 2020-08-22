@@ -6,7 +6,8 @@ module.exports = (themeConfig) => {
         pagination: 12,
         author: '2zh',
         links: [],
-        domain: ''
+        domain: '',
+        comment: []
     }
     for (let key in defaultConfig) {
         themeConfig[key] = themeConfig[key] || defaultConfig[key]
