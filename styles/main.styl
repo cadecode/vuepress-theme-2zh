@@ -435,8 +435,11 @@
   span.vnick
     color $mainText !important
 
-  a.vnick
+  a.vnick, .vcontent a
     color $main !important
+
+  .vcount
+    font-weight normal !important
 
   .vat
     padding 3px 10px
@@ -454,11 +457,14 @@
   .vicon.actived
     fill $main !important
 
-  .vinput:focus
-    border-bottom-color $main !important
+  .vinput
+    transition-duration 0.3s
+    &:focus
+      border-bottom-color $main !important
 
   .vmore, .vsubmit
     border-radius 15px !important
+
 
     &:hover
       border-color $main
