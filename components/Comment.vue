@@ -1,5 +1,11 @@
 <template>
-    <div class="comment-container J_comment-container"></div>
+    <div class="comment-container">
+        <div class="comment-title">
+            <i class="el-icon-s-comment" />
+            Comment here, be cool~
+        </div>
+        <div class=" J_comment"></div>
+    </div>
 </template>
 
 <script>
@@ -20,7 +26,7 @@
         mounted() {
             if (this.appId && this.appKey) {
                 new comment({
-                    el: '.J_comment-container',
+                    el: '.J_comment',
                     appId: this.appId,
                     appKey: this.appKey,
                     enableQQ: true,

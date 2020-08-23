@@ -432,10 +432,18 @@
   .txt-right
     display none
 
-  span.vnick
-    color $mainText !important
+  .vheader
+    input
+      cursor pointer
 
-  a.vnick, .vcontent a
+  .vhead
+    span.vnick
+      color $mainText !important
+
+    a.vnick
+      color $main !important
+
+  .vcontent a
     color $main !important
 
   .vcount
@@ -459,16 +467,17 @@
 
   .vinput
     transition-duration 0.3s
+
     &:focus
       border-bottom-color $main !important
 
   .vmore, .vsubmit
     border-radius 15px !important
 
-
     &:hover
       border-color $main
       color $main
 
-
-
+.comment-title
+  padding 10px 0 10px 0
+  text-align center
