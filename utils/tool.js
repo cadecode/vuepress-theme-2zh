@@ -1,14 +1,14 @@
 const tool = {
     // judge have class or not
     hasClass(el, str) {
-        let reg = new RegExp('\\b' + str + '\\b'),
+        let reg = new RegExp('\\b' + str + '\\b(?!-)'),
             className = el.className
         return reg.test(className)
     },
 
     // add or remove class
     addClass(el, str) {
-        let reg = new RegExp('\\b' + str + '\\b'),
+        let reg = new RegExp('\\b' + str + '\\b(?!-)'),
             className = el.className
         if (!reg.test(className)) {
             el.className = (className + ' ' + str).trim()
@@ -16,15 +16,15 @@ const tool = {
     },
 
     removeClass(el, str) {
-        let reg = new RegExp('\\b' + str + '\\b'),
+        let reg = new RegExp('\\b' + str + '\\b(?!-)'),
             className = el.className
         if (reg.test(className)) {
             el.className = className.replace(reg, '').trim()
         }
     },
 
-    triggerClass(el, str) {
-        let reg = new RegExp('\\b' + str + '\\b'),
+    toggleClass(el, str) {
+        let reg = new RegExp('\\b' + str + '\\b(?!-)'),
             className = el.className
         if (reg.test(className)) {
             el.className = className.replace(reg, '').trim()
