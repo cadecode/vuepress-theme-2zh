@@ -31,7 +31,7 @@
             },
             openAnchor() {
                 const catalog = document.getElementsByClassName('J_catalog-content')[0]
-                this.$tool.triggerClass(catalog, 'catalog-hide')
+                this.$tool.toggleClass(catalog, 'catalog-hide')
             }
         },
         mounted() {
