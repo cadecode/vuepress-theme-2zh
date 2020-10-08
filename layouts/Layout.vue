@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
+    import AllMixin from '../mixins/AllMixin'
     const msgs = [
         `There's nothing here.`,
         `How did we get here?`,

@@ -1,6 +1,6 @@
 // import element ui
 import 'element-ui/lib/theme-chalk/index.css'
-import elementUI from './utils/elementUI'
+import elementUI from './utils/ui'
 
 // tool functions
 import tool from './utils/tool'
@@ -9,7 +9,7 @@ import tool from './utils/tool'
 import bus from './utils/bus'
 
 // import guard
-import guard from './utils/routerGuard'
+import guard from './utils/guard'
 
 // import css
 import './styles/palette.styl'

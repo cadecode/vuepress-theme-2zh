@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
+    import AllMixin from '../mixins/AllMixin'
     import SearchBox from '@vuepress/plugin-search/SearchBox'
 
     export default {
