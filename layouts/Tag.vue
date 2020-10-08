@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
+    import AllMixin from '../mixins/AllMixin'
 
     import Cards from '../components/Cards'
 

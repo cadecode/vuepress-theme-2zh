@@ -18,7 +18,7 @@
     import Tag from './Tag'
     import Info from './Info'
 
-    import GlobalMixin from '../components/GlobalMixin'
+    import GlobalMixin from '../mixins/GlobalMixin'
 
     export default {
         name: "GlobalLayout",

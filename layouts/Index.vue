@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
+    import AllMixin from '../mixins/AllMixin'
 
     import Notice from '../components/Notice'
     import Cards from '../components/Cards'

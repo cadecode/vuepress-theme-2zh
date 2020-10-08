@@ -15,8 +15,8 @@
 </template>
 
 <script>
-    import AllMix from '../components/AllMixin'
-    import PostMix from '../components/PostMixin'
+    import AllMix from '../mixins/AllMixin'
+    import PostMix from '../mixins/PostMixin'
 
     import Catalog from '../components/Catalog'
     import Comment from '../components/Comment'

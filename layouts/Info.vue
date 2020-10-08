@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
+    import AllMixin from '../mixins/AllMixin'
     import Comment from '../components/Comment'
 
     export default {
