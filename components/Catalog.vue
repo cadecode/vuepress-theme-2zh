@@ -40,11 +40,7 @@
             this.$nextTick(() => {
                 // catalog hide or show
                 window.addEventListener('scroll', () => {
-                    if (this.$tool.getScrollOffset().top > 200) {
-                        this.show = true
-                    } else {
-                        this.show = false
-                    }
+                    this.show = this.$tool.getScrollOffset().top > 200;
                 })
                 setTimeout(() => {
                     // catalog follow scroll

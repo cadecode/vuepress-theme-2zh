@@ -1,6 +1,6 @@
 <template>
     <el-row class="cards-container">
-        <el-col :xs="24" :sm="12" :md="8" v-for="(item, index) in pages" :index="index">
+        <el-col :xs="24" :sm="{span: 10, push: 2}" :md="8" v-for="(item, index) in pages" :index="index">
             <div class="cards-item-wrapper">
                 <el-card class="cards-item" shadow="always" :body-style="{ padding: '0px' }">
                     <div class="cards-item-cover" :style="`background-image: url(${item.cover});`"></div>
