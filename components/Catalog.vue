@@ -5,7 +5,7 @@
                 <li v-for="(item, index) in headers" :key="index"
                     @click="clickHeaders(index)"
                     :class="`catalog-item-${item.level}`">
-                    {{item.title}}
+                    {{ item.title }}
                 </li>
             </ul>
         </div>
@@ -38,38 +38,41 @@
             // catalog item
             this.headers = this.$page.headers || []
             this.$nextTick(() => {
+                const getPositionInPage = this.$tool.getPositionInPage
+                const getScrollOffset = this.$tool.getScrollOffset
+                const addClass = this.$tool.addClass
+                const removeClass = this.$tool.removeClass
+                
                 // catalog hide or show
                 window.addEventListener('scroll', () => {
-                    this.show = this.$tool.getScrollOffset().top > 200;
+                    this.show = getScrollOffset().top > 200;
                 })
-                setTimeout(() => {
-                    // catalog follow scroll
-                    const getPositionInPage = this.$tool.getPositionInPage
-                    const hElements = document.querySelectorAll('.J_markdown-content h2,.J_markdown-content h3')
-                    ;[].forEach.call(hElements, (item) => {
+                // catalog follow scroll
+                Array.prototype.forEach.call(
+                    document.querySelectorAll('.J_markdownContent h2,.J_markdownContent h3'),
+                    (item) => {
                         this.heights.push(getPositionInPage(item).top - 70)
                     })
-                    const list = document.querySelectorAll('.J_catalog-content li')
-                    const arr = this.heights
-                    const len = arr.length
-                    window.addEventListener('scroll', () => {
-                        const scrollTop = this.$tool.getScrollOffset().top
-                        for (let i = 0; i < len - 1; i++) {
-                            if (scrollTop >= arr[i] && scrollTop < arr[i + 1]) {
-                                this.$tool.addClass(list[i], 'catalog-item-active')
-                                list[i].scrollIntoView()
-                            } else {
-                                this.$tool.removeClass(list[i], 'catalog-item-active')
-                            }
-                            if (scrollTop >= arr[len - 1]) {
-                                this.$tool.addClass(list[len - 1], 'catalog-item-active')
-                                list[i].scrollIntoView()
-                            } else {
-                                this.$tool.removeClass(list[len - 1], 'catalog-item-active')
-                            }
+                const list = document.querySelectorAll('.J_catalog-content li')
+                const arr = this.heights
+                const len = arr.length
+                window.addEventListener('scroll', () => {
+                    const scrollTop = getScrollOffset().top
+                    for (let i = 0; i < len - 1; i++) {
+                        if (scrollTop >= arr[i] && scrollTop < arr[i + 1]) {
+                            addClass(list[i], 'catalog-item-active')
+                            list[i].scrollIntoView()
+                        } else {
+                            removeClass(list[i], 'catalog-item-active')
                         }
-                    })
-                }, 1000)
+                        if (scrollTop >= arr[len - 1]) {
+                            addClass(list[len - 1], 'catalog-item-active')
+                            list[i].scrollIntoView()
+                        } else {
+                            removeClass(list[len - 1], 'catalog-item-active')
+                        }
+                    }
+                })
             })
         }
     }

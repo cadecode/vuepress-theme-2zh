@@ -1,9 +1,10 @@
 <template>
     <div class="global-container">
-        <Head />
-        <component class="component-content component-hide" :is="getLayout" v-if="flag" />
-        <Foot />
-        <BackTop />
+        <Head/>
+        <!--        <component class="component-content component-hide" :is="getLayout" v-if="flag" />-->
+        <component class="component-content" :is="getLayout" v-if="flag"/>
+        <Foot/>
+        <BackTop/>
     </div>
 </template>
 
@@ -17,12 +18,9 @@
     import Search from './Search'
     import Tag from './Tag'
     import Info from './Info'
-
-    import GlobalMixin from '../mixins/GlobalMixin'
-
+    
     export default {
         name: "GlobalLayout",
-        mixins: [GlobalMixin],
         components: {
             Head,
             Foot,
@@ -49,6 +47,9 @@
                     return 'Layout'
                 }
             }
+        },
+        mounted() {
+        
         }
     }
 </script>

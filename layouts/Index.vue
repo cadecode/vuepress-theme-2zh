@@ -1,7 +1,7 @@
 <template>
     <div class="index-container">
-        <Notice v-if="pagination.currentPage === 1" />
-        <Cards :pages="pages" />
+        <Notice v-if="pagination.currentPage === 1"/>
+        <Cards :pages="pages"/>
         <el-pagination class="index-pagination"
                        @current-change="handlePagination"
                        layout="prev, pager, next"
@@ -15,14 +15,11 @@
 </template>
 
 <script>
-    import AllMixin from '../mixins/AllMixin'
-
     import Notice from '../components/Notice'
     import Cards from '../components/Cards'
-
+    
     export default {
         name: "Index",
-        mixins: [AllMixin],
         data() {
             return {
                 pages: [],

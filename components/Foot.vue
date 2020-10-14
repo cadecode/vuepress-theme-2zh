@@ -6,19 +6,16 @@
                :key="index"
                :href="item.url"
                target="_blank">
-                {{item.text}}
+                {{ item.text }}
             </a>
         </div>
         <div class="foot-meta">
-            <p>Copyright &copy; 2020 {{author}}</p>
+            <p>Copyright &copy; 2020 {{ author }}</p>
             <p>
                 Theme
                 <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
                 powered by
                 <a href="https://www.vuepress.cn/" target="_blank">vuepress</a>
-            </p>
-            <p>
-                <a v-if="domain" :href="`${domain}/sitemap.xml`" target="_blank">Sitemap</a>
             </p>
         </div>
     </div>
