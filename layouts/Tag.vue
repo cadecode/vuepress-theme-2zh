@@ -1,22 +1,19 @@
 <template>
     <div class="tag-container">
         <p class="tag-name">
-            <i class="el-icon-collection" />
-            {{tagName}}
+            <i class="el-icon-collection"/>
+            {{ tagName }}
         </p>
-        <Cards :pages="pages" />
+        <Cards :pages="pages"/>
     </div>
 </template>
 
 <script>
-    import AllMixin from '../mixins/AllMixin'
-
     import Cards from '../components/Cards'
-
+    
     export default {
         name: "Tag",
-        mixins: [AllMixin],
-        components:{
+        components: {
             Cards
         },
         data() {

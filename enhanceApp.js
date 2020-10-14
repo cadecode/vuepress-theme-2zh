@@ -16,6 +16,7 @@ import './styles/palette.styl'
 import './styles/global.styl'
 import './styles/main.styl'
 import './styles/markdown.styl'
+import './styles/plugins.styl'
 
 export default ({Vue, router}) => {
     Vue.use(elementUI)
