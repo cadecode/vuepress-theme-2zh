@@ -1,7 +1,7 @@
 <template>
     <div class="index-container">
-        <Notice v-if="pagination.currentPage === 1"/>
-        <Cards :pages="pages"/>
+        <Notice v-if="pagination.currentPage === 1" />
+        <Cards :pages="pages" />
         <el-pagination class="index-pagination"
                        @current-change="handlePagination"
                        layout="prev, pager, next"
@@ -56,6 +56,9 @@
                 pageSize: this.$themeConfig.pagination,
                 currentPage: this.$pagination.paginationIndex + 1
             }
+        },
+        mounted() {
+            this.$bus.$emit('component-show')
         }
     }
 </script>

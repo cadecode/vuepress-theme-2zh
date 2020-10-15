@@ -1,8 +1,8 @@
 <template>
     <div class="info-container">
         <div class="post-title">{{ title }}</div>
-        <Content class="markdown-content"/>
-        <Comment/>
+        <Content class="markdown-content" />
+        <Comment />
     </div>
 </template>
 
@@ -21,6 +21,10 @@
         },
         created() {
             this.title = this.$frontmatter.title || 'No title'
+        },
+        mounted() {
+            this.$bus.$emit('component-show')
         }
+        
     }
 </script>

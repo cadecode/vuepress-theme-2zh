@@ -1,10 +1,10 @@
 <template>
     <div class="tag-container">
         <p class="tag-name">
-            <i class="el-icon-collection"/>
+            <i class="el-icon-collection" />
             {{ tagName }}
         </p>
-        <Cards :pages="pages"/>
+        <Cards :pages="pages" />
     </div>
 </template>
 
@@ -39,6 +39,9 @@
                     path: item.path
                 })
             })
+        },
+        mounted() {
+            this.$bus.$emit('component-show')
         }
     }
 </script>
