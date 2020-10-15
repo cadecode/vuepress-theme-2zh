@@ -27,7 +27,7 @@
         },
         methods: {
             clickHeaders(index) {
-                this.$tool.scrollTo(this.heights[index])
+                this.$tool.scrollTo(this.heights[index] - 60)
             },
             openAnchor() {
                 const catalog = document.getElementsByClassName('J_catalog-content')[0]
@@ -51,7 +51,7 @@
                 Array.prototype.forEach.call(
                     document.querySelectorAll('.J_markdownContent h2,.J_markdownContent h3'),
                     (item) => {
-                        this.heights.push(getPositionInPage(item).top - 70)
+                        this.heights.push(getPositionInPage(item).top - 110)
                     })
                 const list = document.querySelectorAll('.J_catalog-content li')
                 const arr = this.heights

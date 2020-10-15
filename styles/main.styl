@@ -382,7 +382,7 @@
     position fixed
     display flex
     bottom 90px
-    right: 40px
+    right 40px
     z-index 100
     width 40px
     height 40px
@@ -405,7 +405,7 @@
   position fixed
   display flex
   bottom 40px
-  right: 40px
+  right 40px
   z-index 100
   width 40px
   height 40px
@@ -483,3 +483,93 @@
 .comment-title
   padding 10px 0 10px 0
   text-align center
+
+
+// Loading.vue
+.loading-container {
+  position fixed
+  z-index 2000
+  top 0
+  width 100vw
+  height 100vh
+  display flex
+  justify-content center
+  align-items center
+  background-color: #ffffff;
+}
+
+.loading-box {
+  position relative
+  width 200px
+  height 200px
+  box-sizing border-box
+  border-radius 50%
+  border-top 10px solid #e74c3c
+  animation loading1-radius 2s linear infinite
+}
+
+.loading-box::before,
+.loading-box::after {
+  content ""
+  position absolute
+  width 200px
+  height 200px
+  left 0
+  top -10px
+  box-sizing border-box
+  border-radius 50%
+}
+
+.loading-box::before {
+  border-top 10px solid #16a085
+  transform rotate(120deg)
+}
+
+.loading-box::after {
+  border-top 10px solid #f39c12
+  transform rotate(240deg)
+}
+
+.loading-box span {
+  display block
+  width 200px
+  height 200px
+  text-align center
+  line-height 200px
+  animation loading1-text 2s linear infinite
+}
+
+.loading-box span::after {
+  content ""
+  display inline-block
+  width 3px
+  height 3px
+  border-radius 50%
+  animation loading1-text-dot 2s linear infinite
+}
+
+@keyframes loading1-radius {
+  to {
+    transform rotate(360deg)
+  }
+}
+
+@keyframes loading1-text {
+  to {
+    transform rotate(-360deg)
+  }
+}
+
+@keyframes loading1-text-dot {
+  30% {
+    box-shadow 3px 0 0 currentColor
+  }
+
+  60% {
+    box-shadow 3px 0 0 currentColor, 9px 0 0 currentColor
+  }
+
+  90% {
+    box-shadow 3px 0 0 currentColor, 9px 0 0 currentColor, 15px 0 0 currentColor
+  }
+}

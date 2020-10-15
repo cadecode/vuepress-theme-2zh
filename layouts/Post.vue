@@ -3,14 +3,14 @@
         <div class="post-title">{{ title }}</div>
         <div class="post-tag">
             <router-link :to="`/search/${item}`" v-for="(item, index) in tag" :key="index">
-                <i class="el-icon-paperclip"/>
+                <i class="el-icon-paperclip" />
                 {{ item }}
             </router-link>
         </div>
         <div class="post-desc">{{ desc }}</div>
-        <Content class="markdown-content J_markdownContent"/>
-        <Catalog/>
-        <Comment/>
+        <Content class="markdown-content J_markdownContent" />
+        <Catalog />
+        <Comment />
     </div>
 </template>
 
@@ -18,21 +18,15 @@
     import Catalog from '../components/Catalog'
     import Comment from '../components/Comment'
     
-    const renderModule = {
-        mermaid: {
-            init: null
-        },
-        katex: {
-            init: null
-        },
-        katexConf: {
-            delimiters:
-                [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false}
-                ],
-            strict: false
-        }
+    let mermaid
+    let renderMath
+    const katexConf = {
+        delimiters:
+            [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ],
+        strict: false
     }
     
     export default {
@@ -60,19 +54,16 @@
         },
         mounted() {
             // 加载 cdn 插件
-            if (!renderModule.mermaid.init) {
-                // 获取 mermaid 对象
-                renderModule.mermaid = require(`cdn_mermaid`)
-            }
-            if (!renderModule.katex.init) {
-                // 获取 renderMathInElement 方法
-                renderModule.katex.init = require(`cdn_renderMath`)
-            }
+            // 获取 mermaid 对象
+            mermaid = mermaid || require(`cdn_mermaid`)
+            // 获取 renderMathInElement 方法
+            renderMath = renderMath || require(`cdn_renderMath`)
             // 调插件 api
             this.$nextTick(() => {
-                renderModule.mermaid.init({noteMargin: 10}, ".language-mermaid>pre>code")
-                renderModule.katex.init(document.querySelector('.J_markdownContent'), renderModule.katexConf)
+                mermaid.init({noteMargin: 10}, ".language-mermaid>pre>code")
+                renderMath(document.querySelector('.J_markdownContent'), katexConf)
             })
+            this.$bus.$emit('component-show')
         }
     }
 </script>

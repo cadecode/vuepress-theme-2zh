@@ -37,6 +37,9 @@
         },
         created() {
             this.tags = this.$frontmatterKey.list
+        },
+        mounted() {
+            this.$bus.$emit('component-show')
         }
     }
 </script>

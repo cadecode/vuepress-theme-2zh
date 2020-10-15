@@ -22,6 +22,9 @@
             getMsg() {
                 return msgs[Math.floor(Math.random() * msgs.length)]
             }
+        },
+        mounted() {
+            this.$bus.$emit('component-show')
         }
     }
 </script>

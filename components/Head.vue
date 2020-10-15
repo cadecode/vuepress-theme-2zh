@@ -1,5 +1,5 @@
 <template>
-    <div class="head-container" ref="head">
+    <div class="head-container head-hide" ref="head">
         <div class="head-content clearfix">
             <div class="head-logo">
                 <a href="/">
