@@ -23,7 +23,7 @@
             this.title = this.$frontmatter.title || 'No title'
         },
         mounted() {
-            this.$bus.$emit('component-show')
+            this.$bus.$emit('show-component')
         }
         
     }

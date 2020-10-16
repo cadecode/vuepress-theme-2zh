@@ -15,9 +15,6 @@
 </template>
 
 <script>
-    import Catalog from '../components/Catalog'
-    import Comment from '../components/Comment'
-    
     let mermaid
     let renderMath
     const katexConf = {
@@ -32,8 +29,8 @@
     export default {
         name: "Post",
         components: {
-            Catalog,
-            Comment
+            Catalog: () => import('../components/Catalog'),
+            Comment: () => import('../components/Comment')
         },
         data() {
             return {
@@ -63,7 +60,7 @@
                 mermaid.init({noteMargin: 10}, ".language-mermaid>pre>code")
                 renderMath(document.querySelector('.J_markdownContent'), katexConf)
             })
-            this.$bus.$emit('component-show')
+            this.$bus.$emit('show-component')
         }
     }
 </script>

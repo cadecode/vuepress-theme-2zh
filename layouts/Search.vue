@@ -6,16 +6,16 @@
                     :md="{span: 14, offset: 5}"
                     :lg="{span: 12, offset: 6}"
                     :xl="{span: 10, offset: 7}">
-                <SearchBox/>
+                <SearchBox />
             </el-col>
         </el-row>
         <div class="search-tag-wrapper">
             <p>
-                <i class="el-icon-collection-tag"/>
+                <i class="el-icon-collection-tag" />
                 The following tags help to search ~
             </p>
             <router-link v-for="(item, index) in tags" :index="index" :to="item.path">
-                <i class="el-icon-paperclip"/>
+                <i class="el-icon-paperclip" />
                 {{ item.name }}
             </router-link>
         </div>
@@ -23,12 +23,10 @@
 </template>
 
 <script>
-    import SearchBox from '@vuepress/plugin-search/SearchBox'
-    
     export default {
         name: "Search",
         components: {
-            SearchBox
+            SearchBox: () => import('@vuepress/plugin-search/SearchBox')
         },
         data() {
             return {
@@ -39,7 +37,7 @@
             this.tags = this.$frontmatterKey.list
         },
         mounted() {
-            this.$bus.$emit('component-show')
+            this.$bus.$emit('show-component')
         }
     }
 </script>

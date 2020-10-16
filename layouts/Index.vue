@@ -15,9 +15,6 @@
 </template>
 
 <script>
-    import Notice from '../components/Notice'
-    import Cards from '../components/Cards'
-    
     export default {
         name: "Index",
         data() {
@@ -27,8 +24,8 @@
             }
         },
         components: {
-            Notice,
-            Cards
+            Notice:() => import('../components/Notice'),
+            Cards:() => import('../components/Cards')
         },
         methods: {
             handlePagination(num) {
@@ -58,7 +55,7 @@
             }
         },
         mounted() {
-            this.$bus.$emit('component-show')
+            this.$bus.$emit('show-component')
         }
     }
 </script>
