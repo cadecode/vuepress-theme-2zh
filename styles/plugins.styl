@@ -1,2 +1,74 @@
+@require './palette.styl'
+//medium-zoom
 .medium-zoom-overlay
   z-index 1024
+
+// search
+.search-box
+  > ul
+    width 100% !important
+    border none !important
+    box-shadow $maxBoxShadow !important
+
+  > input
+    left 0 !important
+    width 100% !important
+    border none !important
+    box-shadow $minBoxShadow
+
+    &:focus
+    &:hover
+      box-shadow $maxBoxShadow
+
+// valine
+.txt-right
+  display none
+
+.vheader
+  input
+    cursor pointer
+
+.vhead
+  span.vnick
+    color $mainText !important
+
+  a.vnick
+    color $main !important
+
+.vwrap
+  border-radius 10px !important
+
+.vcontent a
+  color $main !important
+
+.vcount
+  font-weight normal !important
+
+.vat
+  padding 3px 10px
+  border 1px solid #ededed
+  border-radius 15px
+  color $mainText !important
+  transition-duration 0.4s
+
+  &:hover
+    padding 3px 10px
+    border 1px solid $main
+    border-radius 15px
+    color $main !important
+
+.vicon.actived
+  fill $main !important
+
+.vinput
+  transition-duration 0.3s
+
+  &:focus
+    border-bottom-color $main !important
+
+.vmore, .vsubmit
+  border-radius 15px !important
+
+  &:hover
+    border-color $main
+    color $main

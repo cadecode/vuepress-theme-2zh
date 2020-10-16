@@ -9,32 +9,21 @@
 </template>
 
 <script>
-    import Head from '../components/Head'
-    import Foot from '../components/Foot'
-    import BackTop from '../components/BackTop'
-    import Loading from '../components/Loading'
-    import Layout from './Layout'
-    import Index from './Index'
-    import Post from './Post'
-    import Search from './Search'
-    import Tag from './Tag'
-    import Info from './Info'
-    
     let progressBar
     
     export default {
         name: "GlobalLayout",
         components: {
-            Head,
-            Foot,
-            BackTop,
-            Loading,
-            Layout,
-            Index,
-            Post,
-            Search,
-            Tag,
-            Info
+            Head: ()=> import('../components/Head'),
+            Foot: ()=> import('../components/Foot'),
+            BackTop: ()=> import('../components/BackTop'),
+            Loading: ()=> import('../components/Loading'),
+            Layout: ()=> import('./Layout'),
+            Index: ()=> import('./Index'),
+            Post: ()=> import('./Post'),
+            Search: ()=> import('./Search'),
+            Tag: ()=> import('./Tag'),
+            Info: ()=> import('./Info')
         },
         data() {
             return {
@@ -60,10 +49,9 @@
                     this.ifComponent = true
                 })
             })
-            this.$bus.$on('component-show', () => {
+            this.$bus.$on('show-component', () => {
                 setTimeout(() => {
                     this.showLoading = false
-                    this.$bus.loaded = true
                     const component = document.querySelector('.component-content')
                     const head = document.querySelector('.head-container')
                     this.$tool.removeClass(component, 'component-hide')

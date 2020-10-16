@@ -24,7 +24,7 @@
             }
         },
         mounted() {
-            this.$bus.$emit('component-show')
+            this.$bus.$emit('show-component')
         }
     }
 </script>
