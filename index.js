@@ -96,14 +96,15 @@ module.exports = (themeConfig) => {
                 }
             ],
             [
-                // 利用插件，webpack externals 引入 cdn
+                // webpack externals 引入 cdn
                 (pluginOptions, context) => ({
-                    name: '2zh-plugin',
+                    name: '2zh-webpack-externals-plugin',
                     chainWebpack (config) {
                         config['externals']({
                             cdn_nprogress: 'NProgress',
                             cdn_mermaid: 'mermaid',
-                            cdn_renderMath: 'renderMathInElement'
+                            cdn_renderMath: 'renderMathInElement',
+                            cdn_valine: 'Valine'
                         })
                     }
                 })

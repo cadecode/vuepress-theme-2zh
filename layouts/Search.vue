@@ -23,10 +23,12 @@
 </template>
 
 <script>
+    import SearchBox from '@vuepress/plugin-search/SearchBox'
+    
     export default {
         name: "Search",
         components: {
-            SearchBox: () => import('@vuepress/plugin-search/SearchBox')
+            SearchBox
         },
         data() {
             return {

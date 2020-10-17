@@ -9,12 +9,10 @@
 </template>
 
 <script>
-    import Cards from '../components/Cards'
-    
     export default {
         name: "Tag",
         components: {
-            Cards
+            Cards:()=> import('../components/Cards')
         },
         data() {
             return {

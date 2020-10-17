@@ -15,22 +15,14 @@
 </template>
 
 <script>
-    let mermaid
-    let renderMath
-    const katexConf = {
-        delimiters:
-            [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
-            ],
-        strict: false
-    }
+    import Comment from '../components/Comment'
+    import Catalog from '../components/Catalog'
     
     export default {
         name: "Post",
         components: {
-            Catalog: () => import('../components/Catalog'),
-            Comment: () => import('../components/Comment')
+            Catalog,
+            Comment
         },
         data() {
             return {
@@ -50,15 +42,10 @@
             }
         },
         mounted() {
-            // 加载 cdn 插件
-            // 获取 mermaid 对象
-            mermaid = mermaid || require(`cdn_mermaid`)
-            // 获取 renderMathInElement 方法
-            renderMath = renderMath || require(`cdn_renderMath`)
-            // 调插件 api
+            // 调插件 mermaid、katex api
             this.$nextTick(() => {
-                mermaid.init({noteMargin: 10}, ".language-mermaid>pre>code")
-                renderMath(document.querySelector('.J_markdownContent'), katexConf)
+                this.$bus.mermaid.init({noteMargin: 10}, ".language-mermaid>pre>code")
+                this.$bus.renderMath(document.querySelector('.J_markdownContent'), this.$bus.katexConfig)
             })
             this.$bus.$emit('show-component')
         }
