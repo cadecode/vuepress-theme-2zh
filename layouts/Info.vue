@@ -25,6 +25,5 @@
         mounted() {
             this.$bus.$emit('show-component')
         }
-        
     }
 </script>

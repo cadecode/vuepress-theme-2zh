@@ -18,14 +18,12 @@
             }
         },
         beforeMount() {
-            this.$nextTick(() => {
-                window.addEventListener('scroll', () => {
-                    if (this.$tool.getScrollOffset().top > 200) {
-                        !this.show && (this.show = true)
-                    } else {
-                        this.show && (this.show = false)
-                    }
-                })
+            window.addEventListener('scroll', () => {
+                if (this.$tool.getScrollOffset().top > 200) {
+                    !this.show && (this.show = true)
+                } else {
+                    this.show && (this.show = false)
+                }
             })
         }
     }

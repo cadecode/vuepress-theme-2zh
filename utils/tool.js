@@ -5,7 +5,7 @@ const tool = {
             className = el.className
         return reg.test(className)
     },
-
+    
     // add or remove class
     addClass(el, str) {
         let reg = new RegExp('\\b' + str + '\\b(?!-)'),
@@ -14,7 +14,7 @@ const tool = {
             el.className = (className + ' ' + str).trim()
         }
     },
-
+    
     removeClass(el, str) {
         let reg = new RegExp('\\b' + str + '\\b(?!-)'),
             className = el.className
@@ -22,7 +22,7 @@ const tool = {
             el.className = className.replace(reg, '').trim()
         }
     },
-
+    
     toggleClass(el, str) {
         let reg = new RegExp('\\b' + str + '\\b(?!-)'),
             className = el.className
@@ -32,7 +32,7 @@ const tool = {
             el.className = (className + ' ' + str).trim()
         }
     },
-
+    
     // get scrollbar position
     getScrollOffset() {
         if (window.pageXOffset) {
@@ -45,7 +45,7 @@ const tool = {
             left: document.body.scrollLeft || document.documentElement.scrollLeft
         }
     },
-
+    
     // get element position
     getPositionInPage: function (el) {
         let parent = el.offsetParent
@@ -61,7 +61,7 @@ const tool = {
             left: left
         }
     },
-
+    
     // scroll to the position
     scrollTo(destination) {
         if (!window.requestAnimationFrame) {
@@ -80,6 +80,21 @@ const tool = {
             requestAnimationFrame(step)
         }
         step()
+    },
+    
+    throttle(fn, interval) {
+        let timer = null
+        return function () {
+            const _self = this
+            const _args = arguments
+            if (timer) {
+                return
+            }
+            timer = setTimeout(function () {
+                fn.apply(_self, _args)
+                timer = null
+            }, interval)
+        }
     }
 }
 

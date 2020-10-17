@@ -2,28 +2,37 @@
     <div class="global-container">
         <Head />
         <component class="component-content component-hide" :is="getLayout" v-if="ifComponent" />
-        <Foot />
+        <Foot v-if="ifComponent" />
         <BackTop />
         <Loading v-show="showLoading" />
     </div>
 </template>
 
 <script>
-    let progressBar
+    import Head from '../components/Head'
+    import Foot from '../components/Foot'
+    import BackTop from '../components/BackTop'
+    import Loading from '../components/Loading'
+    import Default from './Default'
+    import Index from './Index'
+    import Post from './Post'
+    import Search from './Search'
+    import Tag from './Tag'
+    import Info from './Info'
     
     export default {
         name: "GlobalLayout",
         components: {
-            Head: ()=> import('../components/Head'),
-            Foot: ()=> import('../components/Foot'),
-            BackTop: ()=> import('../components/BackTop'),
-            Loading: ()=> import('../components/Loading'),
-            Layout: ()=> import('./Layout'),
-            Index: ()=> import('./Index'),
-            Post: ()=> import('./Post'),
-            Search: ()=> import('./Search'),
-            Tag: ()=> import('./Tag'),
-            Info: ()=> import('./Info')
+            Head,
+            Foot,
+            BackTop,
+            Loading,
+            Default,
+            Index,
+            Post,
+            Search,
+            Tag,
+            Info
         },
         data() {
             return {
@@ -38,7 +47,7 @@
                 if (path && layout) {
                     return layout
                 } else {
-                    return 'Layout'
+                    return 'Default'
                 }
             }
         },
@@ -60,13 +69,26 @@
             })
         },
         beforeRouteEnter(to, from, next) {
-            progressBar = progressBar || require(`cdn_nprogress`)
-            progressBar.start()
-            next(() => {
+            next((vm) => {
+                vm.$bus.nprogress.start()
                 setTimeout(() => {
-                    progressBar.done()
+                    vm.$bus.nprogress.done()
                 }, 100)
             })
+        },
+        beforeMount() {
+            this.$bus.valine = require(`cdn_valine`)
+            this.$bus.mermaid = require(`cdn_mermaid`)
+            this.$bus.nprogress = require(`cdn_nprogress`)
+            this.$bus.renderMath = require(`cdn_renderMath`)
+            this.$bus.katexConfig = {
+                delimiters:
+                    [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false}
+                    ],
+                strict: false
+            }
         }
     }
 </script>
