@@ -13,7 +13,7 @@
     import Foot from '../components/Foot'
     import BackTop from '../components/BackTop'
     import Loading from '../components/Loading'
-    import Default from './Default'
+    import Layout from './Layout'
     import Index from './Index'
     import Post from './Post'
     import Search from './Search'
@@ -27,7 +27,7 @@
             Foot,
             BackTop,
             Loading,
-            Default,
+            Layout,
             Index,
             Post,
             Search,
@@ -47,7 +47,7 @@
                 if (path && layout) {
                     return layout
                 } else {
-                    return 'Default'
+                    return 'Layout'
                 }
             }
         },
@@ -70,9 +70,9 @@
         },
         beforeRouteEnter(to, from, next) {
             next((vm) => {
-                vm.$bus.nprogress.start()
+                vm.$bus.nprogress && vm.$bus.nprogress.start()
                 setTimeout(() => {
-                    vm.$bus.nprogress.done()
+                    vm.$bus.nprogress && vm.$bus.nprogress.done()
                 }, 100)
             })
         },

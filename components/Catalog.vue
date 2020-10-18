@@ -55,14 +55,17 @@
                 const getPositionDown = (el) => {
                     return this.$tool.getPositionInPage(el).top
                 }
-                
+    
                 const list = document.querySelectorAll('.J_catalogContent li')
-                const len = this.titles.length
                 const arr = this.titles
+                const len = this.titles.length
                 let getPosition
                 let before = Math.ceil(getScrollOffset().top)
-                
+                // catalog follows the page scroll
                 window.addEventListener('scroll', this.$tool.throttle(() => {
+                    if (len === 0) {
+                        return
+                    }
                     let scrollTop = Math.ceil(getScrollOffset().top)
                     if (scrollTop < before) {
                         getPosition = getPositionUp

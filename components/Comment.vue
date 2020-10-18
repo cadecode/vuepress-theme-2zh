@@ -4,7 +4,7 @@
             <i class="el-icon-s-comment" />
             Comment here, be cool~
         </div>
-        <div class=" J_comment"></div>
+        <div class="J_comment" ></div>
     </div>
 </template>
 

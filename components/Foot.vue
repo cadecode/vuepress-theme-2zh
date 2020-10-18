@@ -15,7 +15,7 @@
                 Theme
                 <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
                 powered by
-                <a href="https://www.vuepress.cn/" target="_blank">vuepress</a>
+                <a href="https://www.vuepress.cn/" target="_blank">VuePress</a>
             </p>
             <p :id="this.$route.path" v-if="ifVisitor" class="leancloud_visitors"
                :data-flag-title="this.$frontmatter.title">
@@ -33,7 +33,6 @@
                 author: '',
                 links: [],
                 domain: '',
-                visitorId: '/',
                 ifVisitor: true
             }
         },
@@ -55,6 +54,7 @@
                 appKey,
                 enableQQ: true,
                 placeholder: '昵称框填写 QQ，可自动获取 QQ 名称以及头像、邮箱哦~',
+                path: this.$route.path,
                 visitor: true
             })
         }
