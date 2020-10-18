@@ -17,7 +17,7 @@
     ]
     
     export default {
-        name: 'Default',
+        name: 'Layout',
         methods: {
             getMsg() {
                 return msgs[Math.floor(Math.random() * msgs.length)]
