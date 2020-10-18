@@ -28,14 +28,14 @@
     "url": "https://github.com/CadeCode/vuepress-theme-2zh/issues"
   },
   "dependencies": {
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-medium-zoom": "^1.7.0",
+    "@vuepress/plugin-search": "^1.7.0",
     "core-js": "^2.6.11",
     "dayjs": "^1.8.31",
     "element-ui": "^2.13.2"
   },
   "devDependencies": {
-    "@vuepress/plugin-blog": "^1.9.2",
-    "@vuepress/plugin-medium-zoom": "^1.7.0",
-    "@vuepress/plugin-search": "^1.7.0",
     "babel-plugin-component": "^1.1.1",
     "vuepress": "^1.5.2"
   }
