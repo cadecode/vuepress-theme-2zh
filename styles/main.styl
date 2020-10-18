@@ -134,7 +134,7 @@
   top 10px
   right 0
   padding 5px 10px
-  background $success
+  background $cardPined
   border-radius 10px 0 0 10px
   box-shadow $minBoxShadow
   color #ffffff
@@ -177,23 +177,6 @@
 
 .search-box
   width 100% !important
-
-
-.search-box
-  > ul
-    width 100% !important
-    border none !important
-    box-shadow $minBoxShadow
-
-  > input
-    left auto
-    width 100% !important
-    border none !important
-    box-shadow $minBoxShadow
-
-    &:focus
-    &:hover
-      box-shadow $maxBoxShadow
 
 .search-tag-wrapper
   padding 20px 40px
@@ -265,7 +248,6 @@
 
     &:nth-child(2n)
       background #ff9800
-
 
     &:nth-child(3n)
       background #46c47c
@@ -383,7 +365,7 @@
     position fixed
     display flex
     bottom 90px
-    right: 40px
+    right 40px
     z-index 100
     width 40px
     height 40px
@@ -406,7 +388,7 @@
   position fixed
   display flex
   bottom 40px
-  right: 40px
+  right 40px
   z-index 100
   width 40px
   height 40px
@@ -429,46 +411,96 @@
   margin-top 20px
   padding 10px
 
-  .txt-right
-    display none
-
-  span.vnick
-    color $mainText !important
-
-  a.vnick, .vcontent a
-    color $main !important
-
-  .vcount
-    font-weight normal !important
-
-  .vat
-    padding 3px 10px
-    border 1px solid #ededed
-    border-radius 15px
-    color $mainText !important
-    transition-duration 0.4s
-
-    &:hover
-      padding 3px 10px
-      border 1px solid $main
-      border-radius 15px
-      color $main !important
-
-  .vicon.actived
-    fill $main !important
-
-  .vinput
-    transition-duration 0.3s
-    &:focus
-      border-bottom-color $main !important
-
-  .vmore, .vsubmit
-    border-radius 15px !important
+.comment-title
+  padding 10px 0 10px 0
+  text-align center
 
 
-    &:hover
-      border-color $main
-      color $main
+// Loading.vue
+.loading-container {
+  position fixed
+  z-index 2000
+  top 0
+  width 100vw
+  height 100vh
+  display flex
+  justify-content center
+  align-items center
+  background-color: #ffffff;
+}
 
+.loading-box {
+  position relative
+  width 200px
+  height 200px
+  box-sizing border-box
+  border-radius 50%
+  border-top 10px solid #e74c3c
+  animation loading1-radius 2s linear infinite
+}
 
+.loading-box::before,
+.loading-box::after {
+  content ""
+  position absolute
+  width 200px
+  height 200px
+  left 0
+  top -10px
+  box-sizing border-box
+  border-radius 50%
+}
 
+.loading-box::before {
+  border-top 10px solid #16a085
+  transform rotate(120deg)
+}
+
+.loading-box::after {
+  border-top 10px solid #f39c12
+  transform rotate(240deg)
+}
+
+.loading-box span {
+  display block
+  width 200px
+  height 200px
+  text-align center
+  line-height 200px
+  animation loading1-text 2s linear infinite
+}
+
+.loading-box span::after {
+  content ""
+  display inline-block
+  width 3px
+  height 3px
+  border-radius 50%
+  animation loading1-text-dot 2s linear infinite
+}
+
+@keyframes loading1-radius {
+  to {
+    transform rotate(360deg)
+  }
+}
+
+@keyframes loading1-text {
+  to {
+    transform rotate(-360deg)
+  }
+}
+
+@keyframes loading1-text-dot {
+  30% {
+    box-shadow 3px 0 0 currentColor
+  }
+
+  60% {
+    box-shadow 3px 0 0 currentColor, 9px 0 0 currentColor
+  }
+
+  90% {
+    box-shadow 3px 0 0 currentColor, 9px 0 0 currentColor, 15px 0 0 currentColor
+  }
+}

@@ -2,22 +2,17 @@
     <div class="tag-container">
         <p class="tag-name">
             <i class="el-icon-collection" />
-            {{tagName}}
+            {{ tagName }}
         </p>
         <Cards :pages="pages" />
     </div>
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
-
-    import Cards from '../components/Cards'
-
     export default {
         name: "Tag",
-        mixins: [AllMixin],
-        components:{
-            Cards
+        components: {
+            Cards:()=> import('../components/Cards')
         },
         data() {
             return {
@@ -42,6 +37,9 @@
                     path: item.path
                 })
             })
+        },
+        mounted() {
+            this.$bus.$emit('show-component')
         }
     }
 </script>

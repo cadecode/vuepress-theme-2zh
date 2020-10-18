@@ -16,19 +16,17 @@
             </p>
             <router-link v-for="(item, index) in tags" :index="index" :to="item.path">
                 <i class="el-icon-paperclip" />
-                {{item.name}}
+                {{ item.name }}
             </router-link>
         </div>
     </div>
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
     import SearchBox from '@vuepress/plugin-search/SearchBox'
-
+    
     export default {
         name: "Search",
-        mixins:[AllMixin],
         components: {
             SearchBox
         },
@@ -39,6 +37,9 @@
         },
         created() {
             this.tags = this.$frontmatterKey.list
+        },
+        mounted() {
+            this.$bus.$emit('show-component')
         }
     }
 </script>

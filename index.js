@@ -74,9 +74,6 @@ module.exports = (themeConfig) => {
                             }
                         }
                     ],
-                    sitemap: themeConfig.domain && {
-                        hostname: themeConfig.domain
-                    },
                     feed: themeConfig.domain && {
                         canonical_base: themeConfig.domain,
                     }
@@ -97,6 +94,20 @@ module.exports = (themeConfig) => {
                         background: 'rgba(0, 0, 0, .5)'
                     }
                 }
+            ],
+            [
+                // webpack externals 引入 cdn
+                (pluginOptions, context) => ({
+                    name: '2zh-webpack-externals-plugin',
+                    chainWebpack (config) {
+                        config['externals']({
+                            cdn_nprogress: 'NProgress',
+                            cdn_mermaid: 'mermaid',
+                            cdn_renderMath: 'renderMathInElement',
+                            cdn_valine: 'Valine'
+                        })
+                    }
+                })
             ]
         ]
     }

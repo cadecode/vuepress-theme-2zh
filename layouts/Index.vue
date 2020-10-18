@@ -15,14 +15,10 @@
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
-
     import Notice from '../components/Notice'
     import Cards from '../components/Cards'
-
     export default {
         name: "Index",
-        mixins: [AllMixin],
         data() {
             return {
                 pages: [],
@@ -59,6 +55,9 @@
                 pageSize: this.$themeConfig.pagination,
                 currentPage: this.$pagination.paginationIndex + 1
             }
+        },
+        mounted() {
+            this.$bus.$emit('show-component')
         }
     }
 </script>
