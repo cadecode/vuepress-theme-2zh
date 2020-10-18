@@ -12,11 +12,15 @@
 
 ## 安装
 
-1. 下载源码
+1. 掌握 vuepress 基本使用方法
+
+   [https://www.vuepress.cn](https://www.vuepress.cn/)
+
+2. 下载 vuepress-theme-2zh 源码
 
    [https://github.com/CadeCode/vuepress-theme-2zh](https://github.com/CadeCode/vuepress-theme-2zh)
 
-2. 使用 npm
+3. 使用 npm
 
    ```
    npm i -S @cadecode/vuepress-theme-2zh
@@ -163,20 +167,15 @@
    tag: [Java, Java web]
    ```
 
-5. use
+5. comment
 
-   为文章内容开启插件支持
+   为文章页面、关于页面、友链页面开启评论支持
 
    ```javascript
    // 示例
-   // mermaid 流程图渲染支持
-   use: mermaid
-   // latex 公式渲染支持
-   use: latex
-   // 或
-   use: [mermaid, latex]
+   comment: ['Your own appId', 'Your own appKey']
    ```
-
+   
 6. cover
 
    文章列表中显示的封面
@@ -239,6 +238,4 @@
    ```
 ## 最后
 
-不足之处，敬请见谅，编码不易，感谢支持！
-
-拥抱变化，拥抱开源
+不足之处，敬请见谅，拥抱变化，拥抱开源
