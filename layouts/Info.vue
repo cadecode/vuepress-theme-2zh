@@ -1,18 +1,16 @@
 <template>
     <div class="info-container">
-        <div class="post-title">{{title}}</div>
+        <div class="post-title">{{ title }}</div>
         <Content class="markdown-content" />
         <Comment />
     </div>
 </template>
 
 <script>
-    import AllMixin from '../components/AllMixin'
     import Comment from '../components/Comment'
-
+    
     export default {
         name: "Info",
-        mixins: [AllMixin],
         components: {
             Comment
         },
@@ -23,6 +21,9 @@
         },
         created() {
             this.title = this.$frontmatter.title || 'No title'
+        },
+        mounted() {
+            this.$bus.$emit('show-component')
         }
     }
 </script>
