@@ -87,6 +87,9 @@
   text-align center
 
 // Cards.vue
+.cards-container
+  min-height calc(100vh - 225px)
+
 .cards-item-wrapper
   margin 0 auto
   padding 20px
@@ -437,7 +440,7 @@
   box-sizing border-box
   border-radius 50%
   border-top 10px solid #e74c3c
-  animation loading1-radius 2s linear infinite
+  animation loading-radius 2s linear infinite
 }
 
 .loading-box::before,
@@ -468,7 +471,7 @@
   height 200px
   text-align center
   line-height 200px
-  animation loading1-text 2s linear infinite
+  animation loading-text 2s linear infinite
 }
 
 .loading-box span::after {
@@ -477,22 +480,22 @@
   width 3px
   height 3px
   border-radius 50%
-  animation loading1-text-dot 2s linear infinite
+  animation loading-text-dot 2s linear infinite
 }
 
-@keyframes loading1-radius {
+@keyframes loading-radius {
   to {
     transform rotate(360deg)
   }
 }
 
-@keyframes loading1-text {
+@keyframes loading-text {
   to {
     transform rotate(-360deg)
   }
 }
 
-@keyframes loading1-text-dot {
+@keyframes loading-text-dot {
   30% {
     box-shadow 3px 0 0 currentColor
   }
