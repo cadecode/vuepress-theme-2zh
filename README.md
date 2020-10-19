@@ -119,7 +119,15 @@
    // 示例
    domain: 'https://cadecode.github.io'
    ```
+7. comment
 
+   为文章页面、关于页面、友链页面开启评论支持
+
+   ```javascript
+   // 示例
+   comment: ['Your own appId', 'Your own appKey']
+   ```
+   
 ### md 配置
 
 > 在每个 markdown 文件的头部进行配置，使用 YAML 语法
@@ -166,17 +174,8 @@
    // 或
    tag: [Java, Java web]
    ```
-
-5. comment
-
-   为文章页面、关于页面、友链页面开启评论支持
-
-   ```javascript
-   // 示例
-   comment: ['Your own appId', 'Your own appKey']
-   ```
-   
-6. cover
+     
+5. cover
 
    文章列表中显示的封面
 
@@ -187,7 +186,7 @@
    cover: /cover/picture.png
    ```
    
-7. pined
+6. pined
    
    置顶文章，设定一个数值，从 1 开始，由小到大的排列置顶文章
    
