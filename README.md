@@ -18,7 +18,7 @@
 
 2. 下载 vuepress-theme-2zh 源码
 
-   [https://github.com/CadeCode/vuepress-theme-2zh](https://github.com/CadeCode/vuepress-theme-2zh)
+   [https://github.com/cadecode/vuepress-theme-2zh](https://github.com/cadecode/vuepress-theme-2zh)
 
 3. 使用 npm
 
