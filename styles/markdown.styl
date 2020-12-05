@@ -1,6 +1,11 @@
 @require './palette.styl'
 @require './prism.css'
 
+@font-face {
+  font-family: "Roboto Mono";
+  src: local("Roboto Mono"), url("/font/RobotoMono-Regular.ttf");
+}
+
 .markdown-content
   h1
     display none
@@ -29,7 +34,7 @@
     border-radius 5px
 
   code
-    font-family: Consolas
+    font-family: 'Roboto Mono', Consolas
 
   ol
   ul
