@@ -33,10 +33,10 @@
     "@vuepress/plugin-search": "^1.7.0",
     "core-js": "^2.6.11",
     "dayjs": "^1.8.31",
-    "element-ui": "^2.13.2"
+    "element-ui": "^2.13.2",
+    "vuepress": "^1.5.2"
   },
   "devDependencies": {
-    "babel-plugin-component": "^1.1.1",
-    "vuepress": "^1.5.2"
+    "babel-plugin-component": "^1.1.1"
   }
 }
